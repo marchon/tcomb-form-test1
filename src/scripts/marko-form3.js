@@ -12,144 +12,18 @@ var NumberEditor = require('./numberEditor/NumberEditor.js');
 
 import "./../styles/style.css";
 import "./../styles/bootstrap.css";
+// require('react-datagrid/index.css');
 
 var Form = t.form.Form;
-
-// const myTemplate = t.form.Form.templates.textbox.clone({
-//   renderInput: (locals) => {
-//     return <input value={locals.value} onChange={value => locals.onChange.call(null, value.target.value)} />
-//   }
-// })
-
-// var options1 = {
-//   fields: {
-//     description: {
-//       template: myTemplate
-//     }
-//   }
-// };
-
-// var data111 = {
-//   description: "asd",
-//   isReduction: true
-// }
-
-
-function customListTemplate(locals){
-  console.log(locals);
-
-  var items = locals.items.map(function(el){
-  var obj = el.input.props.value;
-        // {el.input}
-    return (
-      <div>
-        <div>
-
-          <b>Description</b>
-          <br />
-          <input type="text" className="treeText" value={el.input.props.value.description} 
-            onChange={function(value){
-              obj.description = value.target.value;
-              el.input.props.onChange.call(null, obj);
-            }} />
-
-          <br />
-          <br />
-
-          <b>Price</b>
-          <br />
-          <NumberEditor
-            className="spinner"
-            max={100}
-            min={0}
-            decimals={2}
-            onValueChange={function(value){
-              obj.price = value;
-              el.input.props.onChange.call(null, obj);
-            }}
-            step={1}
-            value={el.input.props.value.price}
-            ref="demo-spinner"
-          />
-
-          <br />
-          <br />
-
-        </div>
-
-        <button type="button" onClick={el.buttons[0].click}>REMOVE</button>
-        <hr className="hrList" />
-      </div>
-    );
-  });
-
-  return (
-    <div> 
-        {items}
-        <button type="button" onClick={locals.add.click}>ADD</button>
-    </div>
-  );
-}
-
-function DescriptionTemplate(locals){
-    return (
-      <div>
-        <b>{locals.label}</b>
-        <br />
-        <input type="text" className="treeText" value={locals.value} 
-          onChange={(value => locals.onChange.call(null, value ? value.target.value : ""))} />
-      </div>
-  );
-}
-
-function PriceTemplate(locals){
-  return (
-   <div>
-    <b>{locals.label}</b>
-    <br />
-    <NumberEditor
-       className="spinner"
-       max={100}
-       min={0}
-       decimals={2}
-       onValueChange={(value) => locals.onChange.call(null, value ? value : 0)}
-       step={1}
-       value={locals.value}
-       ref="demo-spinner"
-    />
-   </div>
-  );
-}
-
-function asdTemplate(locals){
-  console.log(locals);
-  return (<div>asd</div>);
-}
 
 
 const customListTemplate2 = t.form.Form.templates.list.clone({
   renderAddButton: (locals) => {
-    console.log(locals); // locals je sve
+    // console.log(locals); // locals je sve
     return (
       <a className="myButton" onClick={locals.add.click}>ADD</a>
     );
   },
-
-  // renderFieldset: (locals) => {
-  //   console.log(locals); // locals je niz redova + addBtn ... nema buttonGroup
-  //   return (
-  //     <div>
-  //       {locals[0]}
-  //     </div>
-  //   );
-  // },
-
-  // renderButtonGroup: (locals) => {
-  //   // console.log(locals); // locals je niz buttona
-  //   return (
-  //     <div> asd </div>
-  //   );
-  // },
 
   renderRow: (locals) => {
     // console.log(locals); // locals je niz buttona i input

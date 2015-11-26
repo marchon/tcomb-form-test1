@@ -25,6 +25,7 @@ import CustomOrderForm from "./custom-order-form.js";
 import MarkoForm from "./marko-form.js";
 import MarkoForm2 from "./marko-form2";
 import MarkoForm3 from "./marko-form3";
+import DataGrid1 from "./dataGrid1.js"
 
 import ZavrsavanjeZadatkaOdrzavanja from "./upravljanje-zadacima-odrzavanja/zavrsavanje/view.js";
 
@@ -39,6 +40,7 @@ class App extends React.Component {
                     <Tab>Marko</Tab>
                     <Tab>Marko2</Tab>
                     <Tab>Marko3</Tab>
+                    <Tab>DataGrid1</Tab>
                     <Tab>Zavrsavanja zadatka odrzavanja</Tab>
                 </TabList>
                 <TabPanel>
@@ -58,6 +60,9 @@ class App extends React.Component {
                 </TabPanel>
                 <TabPanel>
                     <MarkoForm3 />
+                </TabPanel>
+                <TabPanel>
+                    <DataGrid1 />
                 </TabPanel>
                 <TabPanel>
                     <ZavrsavanjeZadatkaOdrzavanja />
