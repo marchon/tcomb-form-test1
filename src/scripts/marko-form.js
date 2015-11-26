@@ -57,7 +57,6 @@ class MarkoForm extends React.Component {
     render() {
         return (
             <div>
-            	<TreeView data={data} color={"#428bca"} />
             	<div>
                 	<Form
                     	ref="form"

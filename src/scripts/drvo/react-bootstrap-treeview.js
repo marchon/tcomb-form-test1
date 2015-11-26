@@ -1,4 +1,6 @@
 import React from "react";
+import t from "tcomb-form";
+
 
 var TreeView = React.createClass({displayName: "TreeView",
 
@@ -78,12 +80,21 @@ var TreeView = React.createClass({displayName: "TreeView",
     }
 
     return (
-      React.createElement("div", {id: "treeview", className: "treeview"}, 
-        React.createElement("ul", {className: "list-group"}, 
-          children
-        )
-      )
+      <div id="treeview" className="treeview">
+        <ul className="list-group">
+          {children}
+        </ul>
+      </div>
     );
+
+    // return (
+    //   React.createElement("div", {id: "treeview", className: "treeview"}, 
+    //     React.createElement("ul", {className: "list-group"}, 
+    //       children
+    //     )
+    //   )
+    // );
+
   }
 });
 
@@ -194,6 +205,7 @@ var TreeNode = React.createClass({displayName: "TreeNode",
     else {
       nodeText = (
         React.createElement("span", null, node.text)
+        // <input type="text" value="asd" />
       );
     }
 
@@ -218,18 +230,27 @@ var TreeNode = React.createClass({displayName: "TreeNode",
     }
 
     return (
-      React.createElement("li", {className: "list-group-item", 
-          style: style, 
-          onClick: this.toggleSelected.bind(this, node.nodeId), 
-          key: node.nodeId}, 
-        indents, 
-        expandCollapseIcon, 
-        nodeIcon, 
-        nodeText, 
-        badges, 
-        children
-      )
+      <div>
+        <li className="list-group-item" style={style} onClick={this.toggleSelected.bind(this, node.nodeId)}
+          key={node.nodeId}> {indents} {expandCollapseIcon} {nodeIcon} {nodeText} {badges} </li>
+          {children}
+      </div>
     );
+
+    // return (
+    //     React.createElement("li", {className: "list-group-item", 
+    //         style: style, 
+    //         onClick: this.toggleSelected.bind(this, node.nodeId), 
+    //         key: node.nodeId}, 
+    //       indents, 
+    //       expandCollapseIcon, 
+    //       nodeIcon, 
+    //       nodeText, 
+    //       badges, 
+    //       children
+    //     )
+    // );
+
   }
 });
 

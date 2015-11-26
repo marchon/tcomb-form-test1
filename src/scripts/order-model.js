@@ -40,7 +40,7 @@ export const Node = t.struct({
 }, "Node");
 Node.meta.props.nodes = t.maybe(t.list(Node));
 
-export const Lvl1Nodes = t.struct({
+export const Lvl1Node = t.struct({
     nodes: t.list(Node)
 });
 
@@ -50,6 +50,11 @@ var OrderItem = t.struct({
     description: t.String,
     price: t.Number,
     quantity: PositiveNumber
+});
+
+var OrderItem1 = t.struct({
+    description: t.String,
+    price: t.Number
 })
 
 var Order = t.struct({
@@ -60,6 +65,16 @@ var Order = t.struct({
     billingAddress: Address,
     items: t.list(OrderItem),
     payments: t.list(PaymentMethods)
+});
+
+export const Order1 = t.struct({
+    items: t.list(OrderItem1),
+    asd: t.String
+});
+
+export const Order2 = t.struct({
+    description: t.String,
+    isReduction: t.Boolean,
 });
 
 export default Order;

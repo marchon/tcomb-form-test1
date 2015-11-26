@@ -24,19 +24,21 @@ import OptionsOrderForm from "./options-order-form.js";
 import CustomOrderForm from "./custom-order-form.js";
 import MarkoForm from "./marko-form.js";
 import MarkoForm2 from "./marko-form2";
+import MarkoForm3 from "./marko-form3";
 
 import ZavrsavanjeZadatkaOdrzavanja from "./upravljanje-zadacima-odrzavanja/zavrsavanje/view.js";
 
 class App extends React.Component {
     render() {
         return (
-            <Tabs selectedIndex={4}>
+            <Tabs selectedIndex={5}>
                 <TabList>
                     <Tab>Basic</Tab>
                     <Tab>Options</Tab>
                     <Tab>Custom</Tab>
                     <Tab>Marko</Tab>
                     <Tab>Marko2</Tab>
+                    <Tab>Marko3</Tab>
                     <Tab>Zavrsavanja zadatka odrzavanja</Tab>
                 </TabList>
                 <TabPanel>
@@ -53,6 +55,9 @@ class App extends React.Component {
                 </TabPanel>
                 <TabPanel>
                     <MarkoForm2 />
+                </TabPanel>
+                <TabPanel>
+                    <MarkoForm3 />
                 </TabPanel>
                 <TabPanel>
                     <ZavrsavanjeZadatkaOdrzavanja />
