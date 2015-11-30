@@ -21,6 +21,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "clamp": "^1.0.1",
     "classnames": "^2.2.0",
     "debug": "^2.2.0",
     "debug-dude": "^1.0.1",
@@ -32,6 +33,7 @@
     "moment": "^2.10.6",
     "normalize.css": "^3.0.3",
     "react": "^0.14.1",
+    "react-clickdrag": "^3.0.1",
     "react-datagrid": "^1.2.15",
     "react-datepicker": "^0.15.2",
     "react-dom": "^0.14.1",
@@ -41,6 +43,7 @@
     "socket.io-client": "^1.3.7",
     "tcomb-form": "^0.7.5",
     "tcomb-validation": "^2.2.0",
+    "uvdom": "^0.1.3",
     "whatwg-fetch": "^0.10.0"
   },
   "devDependencies": {
